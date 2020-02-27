@@ -1,0 +1,39 @@
+[debug] [2020-02-27T16:43:47.697Z] ----------------------------------------------------------------------
+[debug] [2020-02-27T16:43:47.700Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Monica\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-02-27T16:43:47.700Z] CLI Version:   7.12.1
+[debug] [2020-02-27T16:43:47.700Z] Platform:      win32
+[debug] [2020-02-27T16:43:47.700Z] Node Version:  v12.15.0
+[debug] [2020-02-27T16:43:47.706Z] Time:          Thu Feb 27 2020 13:43:47 GMT-0300 (GMT-03:00)
+[debug] [2020-02-27T16:43:47.706Z] ----------------------------------------------------------------------
+[debug] [2020-02-27T16:43:47.706Z] 
+[debug] [2020-02-27T16:43:47.721Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-27T16:43:47.722Z] > authorizing via signed-in user
+[debug] [2020-02-27T16:43:47.722Z] [iam] checking project burger-queen-e7d50 for permissions ["firebase.projects.get"]
+[debug] [2020-02-27T16:43:47.724Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen-e7d50:testIamPermissions  
+
+[debug] [2020-02-27T16:43:48.968Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-27T16:43:48.970Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/burger-queen-e7d50  
+ 
+[debug] [2020-02-27T16:43:49.363Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Monica\Desktop\laboratoria\SCL012-burger-queen'...
+[info] 
+[debug] [2020-02-27T16:43:49.380Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/burger-queen-e7d50/webApps/-/config  
+ 
+[debug] [2020-02-27T16:43:50.053Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Users\Monica\Desktop\laboratoria\SCL012-burger-queen\functions" for Cloud Functions...
+[debug] [2020-02-27T16:43:51.941Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-02-27T16:43:51.941Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-02-27T16:43:51.942Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-02-27T16:43:51.942Z] [worker-~diagnostic~-a542899d-e698-447e-8377-ebec29386522]: Assigning socketPath: \\?\pipe\C:\Users\Monica\Desktop\laboratoria\SCL012-burger-queen\functions\5808
+[debug] [2020-02-27T16:43:51.943Z] [worker-~diagnostic~-a542899d-e698-447e-8377-ebec29386522]: BUSY
+[debug] [2020-02-27T16:43:52.245Z] [runtime-status] [5808] Functions runtime initialized. {"cwd":"C:\\Users\\Monica\\Desktop\\laboratoria\\SCL012-burger-queen\\functions","node_version":"12.15.0"}
+[debug] [2020-02-27T16:43:52.246Z] [runtime-status] [5808] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-02-27T16:43:52.251Z] [runtime-status] [5808] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"C:\\Users\\Monica\\Desktop\\laboratoria\\SCL012-burger-queen\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2020-02-27T16:43:52.253Z] [runtime-status] [5808] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Monica\\Desktop\\laboratoria\\SCL012-burger-queen\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-02-27T16:43:52.254Z] [runtime-status] [5808] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\Users\\Monica\\Desktop\\laboratoria\\SCL012-burger-queen\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2020-02-27T16:43:52.306Z] [worker-~diagnostic~-a542899d-e698-447e-8377-ebec29386522]: IDLE
