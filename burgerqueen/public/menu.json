@@ -1,0 +1,17 @@
+ [
+    {
+      "name": "Liceo Augusto dHalamr",
+      "Comuna": "Ñuñoa",
+      "id": "100",
+      "Direccion": "Ramón Cruz 589",
+      "Telefono": "+5623793123",
+      "Email": "contacto@liceoaugustodhalmar.cl",
+      "puntuación": "200",
+      "Reseña": "Institución educacional de enseñanza media Científico – Humanista perteneciente a la corporación municipal de desarrollo social de Ñuñoa, que ofrece a sus alumnos potenciar el desarrollo de sus capacidades a través de un compromiso integral protagónico, que los habilite para desempeñarse diversificadamente en el económico productivo de servicio, en sus niveles Medio y Superior.",
+      "web": "http://www.liceoaugustodhalmar.cl",
+      "colegioStudent": true,
+      "escuelaStaff": false,
+      "alive": true,
+      "image": "https://otdchile.org/wp-content/uploads/2019/08/liceo-augusto.jpg",
+    }
+]
