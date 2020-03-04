@@ -1,29 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './assets/css/App.css';
 
-
-
-//importar componentes
-import NameNave from './components/NameNave';
+// componentes
+import Saludo from './components/saludo';
 import ButtonsRol from './components/buttons';
+import Formulario from './components/modal';
 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
 
-        <section className="componentes">
-          <NameNave />
-          <ButtonsRol/>
+class App extends Component {
 
-        </section>
+  constructor(props) {
+    super(props)
+    this.state = { isEmptyState: true }
+  }
 
 
-      </header>
+  triggerAddTripState = () => {
+    this.setState({
+      ...this.state,
+      isEmptyState: false,
+      isAddTripState: true
+    })
+  }
 
-    </div>
-  );
+  render() {
+    return (
+
+      <div className="App">
+        <header className="App-header">
+       
+          <section className="componentes">
+          <Saludo />
+          </section>
+       
+            <div className="col-md-12">
+              {this.state.isEmptyState && <ButtonsRol addTrip={this.triggerAddTripState} />}
+
+              {this.state.isAddTripState && <Formulario />}
+            </div>
+        
+        </header>
+        <div>
+         
+        </div>
+
+      </div>
+
+    )
+  }
+
 }
-
-export default App;
+export default App; 
