@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // componentes

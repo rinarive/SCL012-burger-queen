@@ -1,0 +1,38 @@
+[debug] [2020-03-02T15:17:02.205Z] ----------------------------------------------------------------------
+[debug] [2020-03-02T15:17:02.234Z] Command:       /usr/local/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2020-03-02T15:17:02.235Z] CLI Version:   7.13.1
+[debug] [2020-03-02T15:17:02.235Z] Platform:      darwin
+[debug] [2020-03-02T15:17:02.235Z] Node Version:  v13.9.0
+[debug] [2020-03-02T15:17:02.453Z] Time:          Mon Mar 02 2020 12:17:02 GMT-0300 (hora de verano de Chile)
+[debug] [2020-03-02T15:17:02.453Z] ----------------------------------------------------------------------
+[debug] [2020-03-02T15:17:02.454Z] 
+[debug] [2020-03-02T15:17:02.566Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-02T15:17:02.567Z] > authorizing via signed-in user
+[debug] [2020-03-02T15:17:02.567Z] [iam] checking project burger-queen-e7d50 for permissions ["firebase.projects.get"]
+[debug] [2020-03-02T15:17:02.569Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-02T15:17:02.569Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-02T15:17:02.942Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-02T15:17:03.049Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/burger-queen-e7d50:testIamPermissions  
+
+[debug] [2020-03-02T15:17:04.317Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your functions directory does not specify a Node version.
+   - Learn more at https://firebase.google.com/docs/functions/manage-functions#set_runtime_options
+[info] ✔  functions: Emulator started at http://localhost:5000
+[debug] [2020-03-02T15:17:04.429Z] [functions] Watching "/Users/Sol/Desktop/Laboratoria/SCL012-burger-queen/functions" for Cloud Functions...
+[debug] [2020-03-02T15:17:04.616Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-02T15:17:04.616Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-02T15:17:04.617Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-02T15:17:04.617Z] DEBUG: [worker-~diagnostic~-587a413e-2e4b-4d9a-964e-d98477e4447c]: Assigning socketPath: /var/folders/c9/gbrzx0xj4ml3tdjyzj88zydw0000gn/T/fire_emu_1068.sock
+[debug] [2020-03-02T15:17:04.618Z] DEBUG: [worker-~diagnostic~-587a413e-2e4b-4d9a-964e-d98477e4447c]: BUSY
+[debug] [2020-03-02T15:17:09.013Z] DEBUG: [runtime-status] [1068] Functions runtime initialized. {"cwd":"/Users/Sol/Desktop/Laboratoria/SCL012-burger-queen/functions","node_version":"13.9.0"}
+[debug] [2020-03-02T15:17:09.014Z] DEBUG: [runtime-status] [1068] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-02T15:17:09.206Z] DEBUG: [runtime-status] [1068] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/Sol/Desktop/Laboratoria/SCL012-burger-queen/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-02T15:17:09.296Z] DEBUG: [runtime-status] [1068] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Sol/Desktop/Laboratoria/SCL012-burger-queen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-02T15:17:09.297Z] DEBUG: [runtime-status] [1068] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/Sol/Desktop/Laboratoria/SCL012-burger-queen/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-02T15:17:50.204Z] DEBUG: Unsupported trigger: {"eventTrigger":{"resource":"projects/burger-queen-e7d50","eventType":"providers/firebase.auth/eventTypes/user.create","service":"firebaseauth.googleapis.com"},"name":"createProfile","entryPoint":"createProfile"}
+[debug] [2020-03-02T15:17:50.204Z] DEBUG: Unsupported trigger: {"eventTrigger":{"resource":"projects/burger-queen-e7d50","eventType":"providers/firebase.auth/eventTypes/user.delete","service":"firebaseauth.googleapis.com"},"name":"deleteProfile","entryPoint":"deleteProfile"}
+[debug] [2020-03-02T15:17:50.204Z] [functions[createProfile]] function ignored because the firebaseauth.googleapis.com emulator does not exist or is not running.
+[debug] [2020-03-02T15:17:50.204Z] [functions[deleteProfile]] function ignored because the firebaseauth.googleapis.com emulator does not exist or is not running.
+[info] i  functions: Loaded functions: createProfile, deleteProfile
+[debug] [2020-03-02T15:17:51.431Z] DEBUG: [worker-~diagnostic~-587a413e-2e4b-4d9a-964e-d98477e4447c]: IDLE
