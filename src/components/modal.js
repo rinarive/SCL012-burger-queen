@@ -25,13 +25,14 @@ const Formulario = (props) => {
            
             <form className="row" onSubmit={enviarDatos}>
               
+                <h3>Dime quien eres...</h3>
                 <div className="col-md-3">
-                <h1>Dime quien eres...</h1>
                     <input type="name" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-              
+                </div>  
+                <div className="col-md-3">
                     <input type="password" placeholder="Password" className="form-control" onChange={handleInputChange} name="password"></input>
                 </div>
-           
+         
                 <button type="submit"onClick={props.addTrip} className="btn btn-primary">Enviar</button>
             </form>
             <ul>
@@ -41,5 +42,5 @@ const Formulario = (props) => {
         </Fragment>
     );
 }
- 
+
 export default Formulario;

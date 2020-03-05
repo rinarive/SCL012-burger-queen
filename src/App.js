@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // componentes
 import Saludo from './components/saludo';
 import ButtonsRol from './components/buttons';
 import Formulario from './components/modal';
+import LeftMesero from './components/sectionLeft';
 
 
 
@@ -34,15 +36,15 @@ class App extends Component {
           <Saludo />
           </section>
        
-            <div className="col-md-12">
+            <div className="flex-column">
               {this.state.isEmptyState && <ButtonsRol addTrip={this.triggerAddTripState} />}
 
               {this.state.isAddTripState && <Formulario />}
             </div>
         
         </header>
-        <div>
-         
+        <div >
+         < LeftMesero/>
         </div>
 
       </div>
