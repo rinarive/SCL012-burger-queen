@@ -8,6 +8,7 @@ class ButtonsRol extends Component {
         let mesero = "mesero"
         let cocina = "cocina"
         return (
+
             <div className = "buttons">
                 <Button variant="warning">{mesero}</Button>
                 <Button variant="warning">{cocina}</Button>
@@ -17,3 +18,4 @@ class ButtonsRol extends Component {
     };
 }
 export default ButtonsRol
+

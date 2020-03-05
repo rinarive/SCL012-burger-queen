@@ -3,7 +3,6 @@ import './assets/css/App.css';
 //importar componentes	
 import NameNave from './components/NameNave';	
 import ButtonsRol from './components/buttons';	
-import WaiterView from 'waiterView'
 
 function App() {
   return (
@@ -13,9 +12,7 @@ function App() {
         <NameNave />
         <ButtonsRol/>
       </section>
-      <section>
-        <WaiterView/>
-      </section>
+    
     </div>
   )
 }
