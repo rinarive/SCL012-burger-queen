@@ -1,30 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './assets/css/App.css';
-//importar componentes	
-import NameNave from './components/NameNave';	
-import ButtonsRol from './components/buttons';	
-<<<<<<< HEAD
-import WaiterView from 'waiterView'
-=======
->>>>>>> c8d1e99943b4c0c379e490e871c9ceda32e3a021
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header"></header>
-      <section className="componentes">
-        <NameNave />
-        <ButtonsRol/>
-      </section>
-<<<<<<< HEAD
-      <section>
-        <WaiterView/>
-      </section>
-=======
-    
->>>>>>> c8d1e99943b4c0c379e490e871c9ceda32e3a021
-    </div>
-  )
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// componentes
+import Saludo from './components/saludo';
+import ButtonsRol from './components/buttons';
+import Formulario from './components/modal';
+import LeftMesero from './components/sectionLeft';
+
+
+
+class App extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { isEmptyState: true }
+  }
+
+
+  triggerAddTripState = () => {
+    this.setState({
+      ...this.state,
+      isEmptyState: false,
+      isAddTripState: true
+    })
+  }
+
+  render() {
+    return (
+
+      <div className="App">
+        <header className="App-header">
+       
+          <section className="componentes">
+          <Saludo />
+          </section>
+       
+            <div className="flex-column">
+              {this.state.isEmptyState && <ButtonsRol addTrip={this.triggerAddTripState} />}
+
+              {this.state.isAddTripState && <Formulario />}
+            </div>
+        
+        </header>
+        <div >
+         < LeftMesero/>
+        </div>
+
+      </div>
+
+    )
+  }
+
 }
-export default App;
-
+export default App; 

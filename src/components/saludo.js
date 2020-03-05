@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 
-class NameNave extends Component {
+class Saludo extends Component {
 
     render() {
-        let saludo = 'Bienvenido';
+        let saludo = 'Burguer Queen';
         return (
             <div className='Name'>
                 <h1>{saludo}</h1>
@@ -14,4 +14,4 @@ class NameNave extends Component {
     }
 }
 
-export default NameNave
+export default Saludo
