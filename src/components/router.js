@@ -1,13 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './assets/css/App.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
-function ruta() {
+import ButtonsRol from './components/rol';
+
+
+
+function Routes() {
+  console.log(this.props)
     return(
-        <Router>
-            <div>
-                <link to ></link>
-            </div>
-        </Router>
+        
+               
+                  <ButtonsRol/>
+          
+            
     )
 }
+export default Routes

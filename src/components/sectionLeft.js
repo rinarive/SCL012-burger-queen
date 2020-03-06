@@ -8,6 +8,7 @@ import Saludo from './saludo'
 
 const LeftMesero = props => {
   return <div>
+    <path to = '/mesero'/>
 
    <TabContainer id="left-tabs-example" defaultActiveKey="first">
   <Row>
@@ -33,7 +34,7 @@ const LeftMesero = props => {
     </Col>
   </Row>
 </TabContainer>
-  
+
   </div>
 }
 

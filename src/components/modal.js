@@ -1,5 +1,6 @@
 import React, {Fragment, useState } from "react";
 
+
 const Formulario = (props) => {
 
     const [datos, setDatos] = useState({
@@ -21,6 +22,8 @@ const Formulario = (props) => {
     }
 
     return (
+        <div>
+
         <Fragment>
            
             <form className="row" onSubmit={enviarDatos}>
@@ -35,11 +38,12 @@ const Formulario = (props) => {
          
                 <button type="submit"onClick={props.addTrip} className="btn btn-primary">Enviar</button>
             </form>
-            <ul>
-              {datos.nombre}
-               
-            </ul>
+            <ul>{datos.nombre}</ul>
         </Fragment>
+
+     
+
+        </div>
     );
 }
 

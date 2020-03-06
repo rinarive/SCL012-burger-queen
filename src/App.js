@@ -4,9 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // componentes
 import Saludo from './components/saludo';
-import ButtonsRol from './components/buttons';
 import Formulario from './components/modal';
-import LeftMesero from './components/sectionLeft';
+import ButtonsRol from './components/rol';
+
+
 
 
 
@@ -31,21 +32,18 @@ class App extends Component {
 
       <div className="App">
         <header className="App-header">
-       
-          <section className="componentes">
-          <Saludo />
-          </section>
-       
-            <div className="flex-column">
-              {this.state.isEmptyState && <ButtonsRol addTrip={this.triggerAddTripState} />}
 
-              {this.state.isAddTripState && <Formulario />}
-            </div>
-        
+          <section className="componentes">
+            <Saludo />
+          </section>
+
+          <div className="flex-column">
+            {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
+
+            {this.state.isAddTripState && <ButtonsRol />}
+          </div>
+
         </header>
-        <div >
-         < LeftMesero/>
-        </div>
 
       </div>
 
@@ -53,4 +51,5 @@ class App extends Component {
   }
 
 }
+
 export default App; 
