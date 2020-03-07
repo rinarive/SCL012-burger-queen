@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 // componentes
 import Saludo from './components/saludo';
@@ -38,9 +38,9 @@ class App extends Component {
           </section>
        
             <div className="flex-column">
-              {this.state.isEmptyState && <ButtonsRol addTrip={this.triggerAddTripState} />}
+              {this.state.isEmptyState && <Formulario  addTrip={this.triggerAddTripState} />}
 
-              {this.state.isAddTripState && <Formulario />}
+              {this.state.isAddTripState && <ButtonsRol/>}
             </div>
         
         </header>
