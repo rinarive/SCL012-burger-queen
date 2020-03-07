@@ -1,4 +1,4 @@
-import React, {Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 
 const Formulario = (props) => {
 
@@ -8,10 +8,10 @@ const Formulario = (props) => {
     })
 
     const handleInputChange = (event) => {
-     
-      setDatos({
+
+        setDatos({
             ...datos,
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         })
     }
 
@@ -22,23 +22,22 @@ const Formulario = (props) => {
 
     return (
         <Fragment>
-           
+            <ul>
+                <h1>Bienvenido... {datos.nombre} <br></br>a Burger Queen</h1>
+
+            </ul>
+            <headers className="flex-column">
             <form className="row" onSubmit={enviarDatos}>
-              
-                <h3>Dime quien eres...</h3>
                 <div className="col-md-3">
                     <input type="name" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
-                </div>  
+                </div>
                 <div className="col-md-3">
                     <input type="password" placeholder="Password" className="form-control" onChange={handleInputChange} name="password"></input>
                 </div>
-         
-                <button type="submit"onClick={props.addTrip} className="btn btn-primary">Enviar</button>
+
+                <button type="submit" onClick={props.addTrip} className="btn btn-primary">Enviar</button>
             </form>
-            <ul>
-              {datos.nombre}
-               
-            </ul>
+            </headers>
         </Fragment>
     );
 }

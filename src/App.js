@@ -4,12 +4,8 @@ import './assets/css/App.css';
 
 
 // componentes
-import Saludo from './components/saludo';
-import ButtonsRol from './components/buttons';
-import Formulario from './components/modal';
-import LeftMesero from './components/sectionLeft';
-
-
+import ButtonsRol from './components/buttonsRol';
+import Formulario from './components/formulario';
 
 class App extends Component {
 
@@ -17,7 +13,6 @@ class App extends Component {
     super(props)
     this.state = { isEmptyState: true }
   }
-
 
   triggerAddTripState = () => {
     this.setState({
@@ -27,27 +22,26 @@ class App extends Component {
     })
   }
 
+
   render() {
     return (
 
       <div className="App">
         <header className="App-header">
-       
-          <section className="componentes">
-          <Saludo />
-          </section>
-       
-            <div className="flex-column">
-              {this.state.isEmptyState && <Formulario  addTrip={this.triggerAddTripState} />}
 
-              {this.state.isAddTripState && <ButtonsRol/>}
-            </div>
+          <div className="flex-column">
         
-        </header>
-        <div >
-         < LeftMesero/>
-        </div>
 
+            {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
+            
+         
+            {this.state.isAddTripState && <ButtonsRol />}
+
+
+          </div>
+
+        </header>
+       
       </div>
 
     )
