@@ -1,43 +1,65 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment,Component } from "react";
+import Dialog from './dialog'
+class Formulario extends Component {
+constructor(props){
+    super(props);
+    this.state = {
+       value: ''};
 
-const Formulario = (props) => {
-
-    const [datos, setDatos] = useState({
-        nombre: '',
-        password: ''
-    })
-
-    const handleInputChange = (event) => {
-
-        setDatos({
-            ...datos,
-            [event.target.name]: event.target.value
-        })
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.enviarDatos = this.enviarDatos.bind(this);
+}
+  
+    handleInputChange (event){
+    
+        this.setState({
+            ...this.state,
+            name: event.target.value,
+            password:event.target.value});
     }
 
-    const enviarDatos = (event) => {
+    enviarDatos (event) {
         event.preventDefault()
-        console.log('enviando datos...' + datos.nombre + ' ' + datos.password)
+        console.log('enviando datos...' + this.state.name);
+        event.preventDefault();
     }
+
+render(){
 
     return (
         <Fragment>        
-            <headers className="flex-column">
-                <h1>Bienvenido... {datos.nombre} <br></br>a Burger Queen</h1>
-            <form className="row" onSubmit={enviarDatos}>
+            <div className="flex-column">
+            <Dialog title = "Bienvenido a Burguer Queen"/>
+            <form className="row" onSubmit={this.enviarDatos}>
                 <div className="col-md-3">
-                    <input type="name" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
+                    <input type="name" 
+                    placeholder="Nombre" 
+                    className="form-control"
+                    name ={this.state.name} 
+                    onChange={this.handleInputChange}>
+
+                    </input>
                 </div>
                 <div className="col-md-3">
-                    <input type="password" placeholder="Password" className="form-control" onChange={handleInputChange} name="password"></input>
+                    <input type="password"
+                     placeholder="Password" 
+                     className="form-control"
+                     password={this.state.password}
+                     onChange={this.handleInputChange} >
+
+                     </input>
                 </div>
 
-                <button type="submit" onClick={props.addTrip} className="btn btn-primary">Enviar</button>
+                <button type="submit"
+                 value="Submit"
+                 onClick={this.props.addTrip} 
+                 className="btn btn-primary">Enviar</button>
             </form>
-            </headers>
+            </div>
         
         </Fragment>
     );
+}
 }
 
 export default Formulario;

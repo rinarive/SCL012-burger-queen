@@ -19,6 +19,9 @@ const Waiters = props => {
         <Nav.Item>
           <Nav.Link eventKey="second">Almuerzo/Cena</Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="tercero">Comandas</Nav.Link>
+        </Nav.Item>
       </Nav>
     </Col>
     <Col sm={9}>
@@ -28,6 +31,9 @@ const Waiters = props => {
         </TabPane>
         <TabPane eventKey="second">
           <Dialog title = 'aca va template de menu almuerzo' />
+        </TabPane>
+        <TabPane eventKey="tercero">
+          <Dialog title = 'aca va template de comandas listas' />
         </TabPane>
       </TabContent>
     </Col>
