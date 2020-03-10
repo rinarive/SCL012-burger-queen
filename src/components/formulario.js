@@ -21,12 +21,11 @@ const Formulario = (props) => {
     }
 
     return (
-        <Fragment>
-            <ul>
+
+        <Fragment>        
+            <headers className="flex-column">
                 <h1>Bienvenido... {datos.nombre} <br></br>a Burger Queen</h1>
 
-            </ul>
-            <headers className="flex-column">
             <form className="row" onSubmit={enviarDatos}>
                 <div className="col-md-3">
                     <input type="name" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
@@ -38,6 +37,7 @@ const Formulario = (props) => {
                 <button type="submit" onClick={props.addTrip} className="btn btn-primary">Enviar</button>
             </form>
             </headers>
+
         </Fragment>
     );
 }
