@@ -3,11 +3,15 @@ import{Nav, Col, Row}  from 'react-bootstrap'
 import TabContainer from 'react-bootstrap/TabContainer'
 import TabContent from 'react-bootstrap/TabContent'
 import TabPane from 'react-bootstrap/TabPane'
-import Saludo from './saludo'
+import Dialog from './dialog'
 
 
+<<<<<<< HEAD:src/components/sectionLeft.js
 
 const LeftMesero = props => {
+=======
+const Waiters = props => {
+>>>>>>> 2709e779dde7490b5f6bf840b9e6ebd7c2114680:src/components/waiters.js
   return <div>
 
    <TabContainer id="left-tabs-example" defaultActiveKey="first">
@@ -25,10 +29,14 @@ const LeftMesero = props => {
     <Col sm={9}>
       <TabContent>
         <TabPane eventKey="first">
+<<<<<<< HEAD:src/components/sectionLeft.js
         <Saludo />
+=======
+          <Dialog title = "aca va template de  menu desayuno"/>
+>>>>>>> 2709e779dde7490b5f6bf840b9e6ebd7c2114680:src/components/waiters.js
         </TabPane>
         <TabPane eventKey="second">
-          <Saludo />
+          <Dialog title = 'aca va template de menu almuerzo' />
         </TabPane>
       </TabContent>
     </Col>
@@ -38,4 +46,4 @@ const LeftMesero = props => {
   </div>
 }
 
-export default  LeftMesero
+export default Waiters
