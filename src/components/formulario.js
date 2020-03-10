@@ -27,6 +27,7 @@ constructor(props){
 render(){
 
     return (
+
         <Fragment>        
             <div className="flex-column">
             <Dialog title = "Bienvenido a Burguer Queen"/>
