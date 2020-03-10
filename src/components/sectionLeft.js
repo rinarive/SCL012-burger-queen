@@ -6,6 +6,7 @@ import TabPane from 'react-bootstrap/TabPane'
 import Saludo from './saludo'
 
 
+
 const LeftMesero = props => {
   return <div>
 
@@ -24,7 +25,7 @@ const LeftMesero = props => {
     <Col sm={9}>
       <TabContent>
         <TabPane eventKey="first">
-          <Saludo />
+        <Saludo />
         </TabPane>
         <TabPane eventKey="second">
           <Saludo />

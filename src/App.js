@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
 
+
 // componentes
 import Saludo from './components/saludo';
 import ButtonsRol from './components/buttons';
 import Formulario from './components/modal';
-import LeftMesero from './components/sectionLeft';
+
 
 
 
@@ -43,13 +44,15 @@ class App extends Component {
         
         </header>
         <div >
-         < LeftMesero/>
+        
         </div>
 
       </div>
 
     )
   }
+  
 
 }
+
 export default App; 
