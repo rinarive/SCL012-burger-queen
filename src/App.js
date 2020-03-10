@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
 
-
-
 // componentes
 import ButtonsRol from './components/buttonsRol';
 import Formulario from './components/formulario';
@@ -28,9 +26,7 @@ class App extends Component {
 
       <div className="App">
         <header className="App-header">
-
-          <div className="flex-column">
-        
+       
 
             {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
             
@@ -38,7 +34,6 @@ class App extends Component {
             {this.state.isAddTripState && <ButtonsRol />}
 
 
-          </div>
 
         </header>
        
