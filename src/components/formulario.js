@@ -1,6 +1,6 @@
-import React, { Fragment, Component } from "react";
-import firebaseConf from '../firebase'
-import Dialog from './dialog'
+import React, { Fragment, useState } from "react";
+import '../assets/css/App.css';
+
 
 
 class Formulario extends Component {
