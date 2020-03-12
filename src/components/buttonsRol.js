@@ -44,9 +44,9 @@ class ButtonsRol extends Component {
 
                 {this.state.isEmptyState && <ButtonGene title='Mesero' onClick={this.changeAddTripState} />}
 
-                {this.state.isChangeState && <Waiters />  }  {' '}
+                {this.state.isChangeState && <Waiters  />  }  {' '}
                
-                {this.state.isEmptyStateCook && <ButtonGene title='cocina' onClick={this.changeAtCookState} />}
+                {this.state.isEmptyStateCook && <ButtonGene title='cocina'  onClick={this.changeAtCookState} />}
 
                 {this.state.isChangeStateCook && <Dialog title = "sirve"/>} {' '}
 

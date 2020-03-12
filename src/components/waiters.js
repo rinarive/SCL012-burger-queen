@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import{Nav, Col, Row}  from 'react-bootstrap'
 import TabContainer from 'react-bootstrap/TabContainer'
 import TabContent from 'react-bootstrap/TabContent'
@@ -6,8 +6,38 @@ import TabPane from 'react-bootstrap/TabPane'
 import Dialog from './dialog'
 
 
-const Waiters = props => {
+class Waiters extends Component{
+  state = {
+    client: "",
+    table: "",
+    order: []
+  };
+
+  actualizarCliente(nombreCliente) {
+    this.setState({
+      client: nombreCliente
+    });
+  }
+
+  actualizarMesa(numeroMesa) {
+    this.setState({
+      table: numeroMesa
+    });
+  }
+ 
+  // Actualiza el estado global
+  addOrder(item) {
+    this.setState(previousState => ({
+      order: [...previousState.order, item]
+    }));
+    console.log(this.state.order);
+  }
+
+
+render(){
+
   return <div>
+
 
    <TabContainer id="left-tabs-example" defaultActiveKey="first">
   <Row>
@@ -41,6 +71,7 @@ const Waiters = props => {
 </TabContainer>
   
   </div>
+}
 }
 
 export default Waiters

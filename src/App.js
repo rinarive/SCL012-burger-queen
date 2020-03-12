@@ -31,7 +31,7 @@ class App extends Component {
             {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
             
          
-            {this.state.isAddTripState && <ButtonsRol />}
+            {this.state.isAddTripState && <ButtonsRol  />}
 
 
 
