@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
 
+
+
+
 // componentes
 import ButtonsRol from './components/buttonsRol';
 import Formulario from './components/formulario';
+
 
 class App extends Component {
 
@@ -29,8 +33,7 @@ class App extends Component {
        
 
             {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
-            
-         
+
             {this.state.isAddTripState && <ButtonsRol />}
 
 
