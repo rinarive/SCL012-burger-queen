@@ -30,6 +30,7 @@ class Formulario extends Component {
 
     handleInputChange(event) {
 
+
         this.setState({
             ...this.state,
             name: event.target.value,
@@ -39,6 +40,15 @@ class Formulario extends Component {
 
     enviarDatos(event) {
         event.preventDefault();
+
+    const enviarDatos = (event) => {
+    
+    
+        event.preventDefault()
+        console.log('enviando datos...' + datos.nombre + ' ' + datos.password)
+    }
+    
+    return (
 
         const params = {
             name: this.inputName.value,

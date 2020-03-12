@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 // componentes
 import ButtonsRol from './components/buttonsRol';
 import Formulario from './components/formulario';
