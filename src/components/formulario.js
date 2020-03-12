@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, Component} from "react";
 import '../assets/css/App.css';
+import Dialog from './dialog'
 
 
 
@@ -43,7 +44,8 @@ class Formulario extends Component {
             password: this.inputpassword.value,
         };
         console.log('enviando datos...' + params.name + params.password);
-        if (params.name && params.password) {
+        
+        /*if (params.name && params.password) {
 
             firebaseConf.database().ref('form').push(params).then(() => {
               
@@ -56,7 +58,7 @@ class Formulario extends Component {
 
         } else {
             this.showAlert('Por favor dime quien eres...');
-        }
+        }*/
 
     }
 

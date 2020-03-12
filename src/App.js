@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import './assets/css/App.css';
-
-
-
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // componentes
 import ButtonsRol from './components/buttonsRol';
@@ -30,15 +28,11 @@ class App extends Component {
 
       <div className="App">
         <header className="App-header">
-       
-
             {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
 
             {this.state.isAddTripState && <ButtonsRol />}
-
-
-
         </header>
+     
        
       </div>
 
