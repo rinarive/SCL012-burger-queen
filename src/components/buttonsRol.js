@@ -39,7 +39,7 @@ class ButtonsRol extends Component {
     render() {
 
         return (
-            <Fragment>
+            <Fragment >
                 <Row>
 
                 {this.state.isEmptyState && <ButtonGene title='Mesero' onClick={this.changeAddTripState} />}

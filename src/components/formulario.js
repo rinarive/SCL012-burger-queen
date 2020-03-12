@@ -1,5 +1,7 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, Component} from "react";
 import '../assets/css/App.css';
+import Dialog from './dialog'
+
 
 
 
@@ -43,20 +45,7 @@ class Formulario extends Component {
             password: this.inputpassword.value,
         };
         console.log('enviando datos...' + params.name + params.password);
-        if (params.name && params.password) {
-
-            firebaseConf.database().ref('form').push(params).then(() => {
-              
-
-            }).catch(() => {
-         
-                this.showAlert('oops.. hubo un error')
-              });
-
-
-        } else {
-            this.showAlert('Por favor dime quien eres...');
-        }
+     
 
     }
 
@@ -64,7 +53,7 @@ class Formulario extends Component {
 
         return (
 
-            <Fragment>
+            <Fragment className="clientID">
                 {this.state.alert && <div className={`alert alert-${this.state.alertData.type}`} role='alert'>
                     <div className='container'>
                         {this.state.alertData.message}
@@ -94,7 +83,7 @@ class Formulario extends Component {
                             </input>
                         </div>
 
-                        <button type="submit" onClick = {this.props.addTrip} className="btn btn-primary">Enviar</button>
+                        <button type="submit" onClick = {this.props.addTrip} className="btn btn-warning">Enviar</button>
                     </form>
                 </div>
 
