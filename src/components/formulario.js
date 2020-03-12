@@ -39,7 +39,7 @@ class Formulario extends Component {
 
     enviarDatos(event) {
         event.preventDefault()
-        console.log('enviando datos...' + datos.nombre + ' ' + datos.password)
+      
     }
   
     render() {
