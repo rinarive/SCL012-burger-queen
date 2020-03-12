@@ -18,10 +18,12 @@ const Formulario = (props) => {
     }
 
     const enviarDatos = (event) => {
+    
+    
         event.preventDefault()
         console.log('enviando datos...' + datos.nombre + ' ' + datos.password)
     }
-
+    
     return (
 
         <Fragment>        
