@@ -6,44 +6,69 @@ import './nameClient.css'
 
 class NameClient extends Component {
  
-    handleChange = (e) => {
-    
-        const cliente = e.target.value
-        console.log(cliente)  
-        //aqui puede ir un setState
+
+    constructor(props) {
+        super(props);
+        this.state = {
+           form:[]
+        };
+        this.handleInputChanges = this.handleInputChanges.bind(this);
+        this.enviarDatos = this.enviarDatos.bind(this);
     }
+  handleInputChanges(event) {
+    this.setState({
+        ...this.state,
+        client: event.target.value,
+        mesa: event.target.value
+    });
+}
+   enviarDatos= (event)=>{
+    event.preventDefault()
 
-
+ }
+ resetState() {
+    this.setState({
+      form: []
+    });
+  }
     render() {
         return (
-            <div className='clientID'>
-                <div className='client'>
+        <div className='clientID'>
+            <div className="titleClient"> 
 
-                <label className='titleClient'>Nombre del Cliente:</label>
-                
+                <div className='client' onSubmit={this.enviarDatos.bind(this)}ref='contactForm'>
+
+                <p>Clientes:   </p>
                 <input 
-                onChange={(e) => this.handleChange(e)} 
-                className='inputClient'
-                type='text'
-                name='client'
-                value={''}
+                onChange={this.handleInputChanges}
+                className="form-control"
+                placeholder="Nombre"
+                type='name'
+                name={this.state.name}
+                ref={name => this.inputName = name} 
+            
                 />
+                <p>Mesa:    </p>
 
-
-                <p className='titleClient'>Mesa:</p>
-
-                <select className='mesa'>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
-                   
+                <select
+                onChange={this.handleInputChanges}
+                className="form-control"
+                placeholder="Numero de mesa"
+                type='number'
+                name={this.state.mesa}
+                > 
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
                 </select>
+                <button type="submit" onClick = {this.resetState.bind(this)} className="mesa">+</button>
 
-                </div>
+            </div>
+        </div>
                
-                </div>
+    </div>
                
         )
     }

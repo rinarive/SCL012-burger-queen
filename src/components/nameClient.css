@@ -1,5 +1,6 @@
 .client{
-	display: flex;
+    display: flex;
+    flex-direction: row;
 	
 }
 
@@ -16,6 +17,7 @@
     margin-top: 4px;
     height: 34px;
     width: 145px;
+  
     font-family: 'Roboto';
     border-radius: 5px;
     border-color: #B22222;

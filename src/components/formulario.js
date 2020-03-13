@@ -16,20 +16,9 @@ class Formulario extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.enviarDatos = this.enviarDatos.bind(this);
     }
-    // Mostrar una alerta cuando se envia el formulario
-    showAlert(type, message) {
-        this.setState({
-            alert: true,
-            alertData: { type, message }
-        });
-        setTimeout(() => {
-            this.setState({ alert: false });
-        }, 4000)
-    }
+  
 
     handleInputChange(event) {
-
-
         this.setState({
             ...this.state,
             name: event.target.value,
@@ -46,12 +35,7 @@ class Formulario extends Component {
 
         return (
 
-            <Fragment className="clientID">
-                {this.state.alert && <div className={`alert alert-${this.state.alertData.type}`} role='alert'>
-                    <div className='container'>
-                        {this.state.alertData.message}
-                    </div>
-                </div>}
+            <Fragment className="clientID">    
                 <div className="flex-column">
                     <Dialog title="Bienvenido a Burguer Queen" />
                     <form className="row"onSubmit={this.enviarDatos.bind(this)} ref='contactForm' >

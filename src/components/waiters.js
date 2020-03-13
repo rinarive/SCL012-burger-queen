@@ -16,7 +16,7 @@ import NameClient from './nameClient'
 class Waiters extends Component{
   state = {
     client: "",
-    table: "",
+    mesa: "",
     order: []
   };
 
@@ -28,7 +28,7 @@ class Waiters extends Component{
 
   actualizarMesa(numeroMesa) {
     this.setState({
-      table: numeroMesa
+      mesa: numeroMesa
     });
   }
  
@@ -46,6 +46,7 @@ render(){
   return(
   <div className='row' >
         <NameClient />
+             
   <div className="menuDiv" >
 
     <div>
@@ -84,7 +85,7 @@ render(){
     
   </div>
   <div className="orderStatus">
-   
+  <p ></p>
   </div>
 
 </div>

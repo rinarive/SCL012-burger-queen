@@ -40,9 +40,10 @@ class ButtonsRol extends Component {
 
         return (
 
-            <Fragment>
+            <Fragment    >
 
                 <Row>
+                   
 
                 {this.state.isEmptyState && <ButtonGene title='Mesero' onClick={this.changeAddTripState} />}
 
