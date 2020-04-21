@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
-import './nameClient.css'
+import './nameClient.css';
+import './plus.png';
+
 
 
 
@@ -63,7 +65,7 @@ class NameClient extends Component {
                 <option value="4">4</option>
                 <option value="5">5</option>
                 </select>
-                <button type="submit" onClick = {this.resetState.bind(this)} className="mesa">+</button>
+                <button type="submit"onClick = {this.resetState.bind(this)} className="mesa"><  img src={require("./plus.png")} className='img'/></button>
 
             </div>
         </div>

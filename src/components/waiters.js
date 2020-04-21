@@ -51,7 +51,7 @@ render(){
 
     <div>
   
-      <TabContainer defaultActiveKey="first">
+      <TabContainer defaultActiveKey="tercero">
         <Row>
             <Col sm={3} >
                 <Nav variant = "pills" className="column">
@@ -68,7 +68,7 @@ render(){
               </Col>
             <Col  className="menu">
              <TabContent  className="containerButtonsMenu" >
-              <TabPane eventKey="first">
+              <TabPane clasName="itemsMenu" eventKey="first">
                 <Breackfast />
               </TabPane>
               <TabPane clasName="itemsMenu" eventKey="second">
