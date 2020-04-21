@@ -19,6 +19,7 @@ class Formulario extends Component {
   
 
     handleInputChange(event) {
+
         this.setState({
             ...this.state,
             name: event.target.value,
@@ -35,7 +36,9 @@ class Formulario extends Component {
 
         return (
 
+
             <Fragment className="clientID">    
+
                 <div className="flex-column">
                     <Dialog title="Bienvenido a Burguer Queen" />
                     <form className="row"onSubmit={this.enviarDatos.bind(this)} ref='contactForm' >
