@@ -110,9 +110,9 @@ render(){
           client={this.state.client}
           selectTable={this.selectTable.bind(this)}
           onClick={this.saveOrder.bind(this)}/>
-            <button onClick={this.menuBreackfastClick}className="btn btn-warning">Desayuno</button>
-            <button onClick={this.menuLunchClick}className="btn btn-warning">Almuerzo/Cena</button>
-            <button className="btn btn-warning">Comandas</button>
+            <button onClick={this.menuBreackfastClick}className="btn btn-warning text-white">Desayuno</button>
+            <button onClick={this.menuLunchClick}className="btn btn-warning text-white">Almuerzo/Cena</button>
+            <button className="btn btn-warning text-white">Comandas</button>
           </ul>
      
         </article>

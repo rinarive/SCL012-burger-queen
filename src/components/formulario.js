@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import '../assets/css/App.css';
-import Dialog from './dialog'
+import logo from "../assets/images/burgerQueen.png";
 
 
 
@@ -35,36 +35,54 @@ class Formulario extends Component {
     render() {
 
         return (
+<>
+        <img 
+		    alt="logo" 
+			src={logo} 
+        />
+    <div className="field">
+        <p className="control has-icons-left has-icons-right">
+            <input type="name"
+                placeholder="Nombre"
+                className="form-control"
+                id='name' 
+                name={this.state.name}
+                ref={name => this.inputName = name} 
+                onChange={this.handleInputChange}>
+            </input>
+            <span className="icon is-small is-left">
+            <i className="fas fa-envelope"></i>
+            </span>
+            <span className="icon is-small is-right">
+            <i className="fas fa-check"></i>
+            </span>
+        </p>
+    </div>
+    <div className="field">
+        <p className="control has-icons-left">
+            <input type="password"
+                placeholder="Password"
+                className="form-control"
+                password={this.state.password}
+                onChange={this.handleInputChange} >
+            </input>
+            <span className="icon is-small is-left">
+            <i className="fas fa-lock"></i>
+            </span>
+        </p>
+    </div>
+    <div className="field">
+        <p className="control">
+            <button 
+            type="submit"
+            onClick = {this.props.addTrip} 
+            className="btn btn-warning text-white"
+            >Entrar</button>
+        </p>
+    </div>
+</>
 
-                <div className="flex-column">
-                    <Dialog title="Bienvenido a Burguer Queen" />
-                    <form className="row"onSubmit={this.enviarDatos.bind(this)} ref='contactForm' >
-                        <div className="col-md-3">
-                            <input type="name"
-                                placeholder="Nombre"
-                                className="form-control"
-                                id='name' 
-                                name={this.state.name}
-                                ref={name => this.inputName = name} 
-                                onChange={this.handleInputChange}>
-
-                            </input>
-                        </div>
-                        <div className="col-md-3">
-                            <input type="password"
-                                placeholder="Password"
-                                className="form-control"
-                                password={this.state.password}
-                                onChange={this.handleInputChange} >
-
-                            </input>
-                        </div>
-
-                        <button type="submit" onClick = {this.props.addTrip} className="btn btn-warning">Enviar</button>
-                    </form>
-                </div>
-
-         
+          
         )
     }
 }
