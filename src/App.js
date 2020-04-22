@@ -21,6 +21,7 @@ class App extends Component {
       isEmptyState: false,
       isAddTripState: true
     })
+   
   }
 
 
@@ -28,7 +29,8 @@ class App extends Component {
     return (
 
       <div className="App-header">
-            {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
+
+            {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState}/>}
 
             {this.state.isAddTripState && <ButtonsRol />}
          

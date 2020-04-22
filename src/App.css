@@ -6,7 +6,8 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #B22222;
+  color: #FD7D00;
+ 
 }
 .App{
   min-height: 100vh;
@@ -16,10 +17,6 @@
   color: #B22222;
 }
 
-.hello{
-  background: #FFFFFF;
-
-}
 * {
   list-style: none;
 }

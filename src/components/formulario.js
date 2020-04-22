@@ -8,9 +8,9 @@ class Formulario extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            form: '',
-            alert: false,
-            alertData: {}
+            form: [],
+            name:'',
+
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -28,11 +28,12 @@ class Formulario extends Component {
 
     enviarDatos(event) {
         
-        alert(`welcome, ${this.state.name}`)
+        alert(`welcome, ${this.state.name}`);
+        console.log(this.state.name)
 
         event.preventDefault()
-      
     }
+
 
     render() {
 
@@ -75,11 +76,13 @@ class Formulario extends Component {
     </div>
     <div className="field">
         <p className="control">
+          
             <button 
             type="submit"
-            onClick = {this.props.addTrip} 
+            onClick= {this.props.addTrip} 
             className="btn btn-warning text-white"
             >Entrar</button>
+          
         </p>
     </div>
 </form>     

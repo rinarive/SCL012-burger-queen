@@ -9,7 +9,6 @@ class ButtonsRol extends Component {
         this.state = {
             isEmptyState: true,
             isEmptyStateCook: true,
-         
         }
        
     }
