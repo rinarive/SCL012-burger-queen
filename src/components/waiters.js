@@ -1,37 +1,40 @@
 import React, { Component } from 'react'
-import{Nav, Col, Row}  from 'react-bootstrap'
-import TabContainer from 'react-bootstrap/TabContainer'
-import TabContent from 'react-bootstrap/TabContent'
-import TabPane from 'react-bootstrap/TabPane'
+import 'bulma/css/bulma.css'
 import '../App.css';
-import './waiters.css';
-import './centralWhite.css'
-import Dialog from './dialog'
 import LunchMenu from './lunch'
 import Breackfast from './breakfast'
 import NameClient from './nameClient'
+import db from './confg/firebase';
 
 
 
 class Waiters extends Component{
-  state = {
-    client: "",
-    mesa: "",
-    order: []
-  };
-
-  actualizarCliente(nombreCliente) {
+  constructor(props){
+    super(props);
+    this.menuBreackfastClick = this.menuBreackfastClick.bind(this);
+    this.menuLunchClick = this.menuLunchClick.bind(this);
+    this.state = {
+      client: "",
+      table: "",
+      order: [],
+      breakfast:false,
+      lunch:false
+    };
+  }
+   //Función que actualiza el estado de Cliente
+   inputClient(clientName) {
     this.setState({
-      client: nombreCliente
+      client: clientName
+    });
+   
+  }
+// Función que actualiza el estado de la mesa
+  selectTable(tableNumber) {
+    this.setState({
+      table: tableNumber
     });
   }
 
-  actualizarMesa(numeroMesa) {
-    this.setState({
-      mesa: numeroMesa
-    });
-  }
- 
   // Actualiza el estado global
   addOrder(item) {
     this.setState(previousState => ({
@@ -39,56 +42,114 @@ class Waiters extends Component{
     }));
     console.log(this.state.order);
   }
+  // Función que elimina el pedido y actualiza el state
+  deleteOrder = index => {
+    let currentOrder = [...this.state.order];
+    currentOrder.splice(index, 1);
+    this.setState({
+      order: currentOrder
+    });
+  };
 
+  resetState() {
+    this.setState({
+      client: "",
+      table: "",
+      order: []
+    });
+  }
+  //Función que guarda los datos de la colección en firebase
+  saveOrder() {
+    console.log('este es el console ' + this.state.client);
+    console.log('esta es la mesa' + this.state.table);
+    db.collection('orders').add({
+      client: this.state.client,
+      table: this.state.table,
+      order: this.state.order,
+      time: new Date(),
+      cooked: 'PREPARANDO',
+      delivered: 'NO',
+    })
+    .then((docRef) => {
+      this.resetState();
+      console.log(docRef);
+    })
+    .catch((error) => {
+      console.log('Error ', error);
+    });
+
+  };
+
+
+  menuBreackfastClick(){
+    this.setState({
+      breakfast:true,
+      lunch:false
+    })
+  }
+  menuLunchClick(){
+    this.setState({
+      lunch:true,
+      breakfast:false
+
+    })
+  }
 
 render(){
 
   return(
-  <div className='row' >
-        <NameClient />
-             
-  <div className="menuDiv" >
 
-    <div>
-  
-      <TabContainer defaultActiveKey="tercero">
-        <Row>
-            <Col sm={3} >
-                <Nav variant = "pills" className="column">
-                  <Nav.Item>
-                    <Nav.Link eventKey="first">Desayuno</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="second" >Almuerzo/Cena</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link eventKey="tercero">Comandas</Nav.Link>
-                  </Nav.Item>
-                </Nav>
-              </Col>
-            <Col  className="menu">
-             <TabContent  className="containerButtonsMenu" >
-              <TabPane clasName="itemsMenu" eventKey="first">
-                <Breackfast />
-              </TabPane>
-              <TabPane clasName="itemsMenu" eventKey="second">
-                <LunchMenu />
-              </TabPane>
-              <TabPane clasName="itemsMenu" eventKey="tercero">
-                <Dialog title = 'aca va template de comandas listas' />
-              </TabPane>
-            </TabContent>
-           </Col>
-        </Row>
-      </TabContainer>
+
+  <div className="tile is-vertical is-12">
+    <div className="tile">
+      <div className="tile is-parent is-vertical">
+        <article className="tile is-child notification is-warning">        
+          <ul>
+          <NameClient 
+          inputClient={this.inputClient.bind(this)}
+          client={this.state.client}
+          selectTable={this.selectTable.bind(this)}
+          onClick={this.saveOrder.bind(this)}/>
+            <button onClick={this.menuBreackfastClick}className="btn btn-warning">Desayuno</button>
+            <button onClick={this.menuLunchClick}className="btn btn-warning">Almuerzo/Cena</button>
+            <button className="btn btn-warning">Comandas</button>
+          </ul>
+     
+        </article>
+
+      </div>
+      <div class="tile is-parent">
+      <article className="tile is-child notification is-primary">
+        <p classname="subtitle">Mesa: {this.selectTable}</p>
+        <p className="subtitle">Cliente: {this.inputClient}</p>
+        <div className="content">
+        
+        </div>
+      </article>
     </div>
+    </div>
+      
+      <div className="tile is-parent is vertical">
+        <article className="tile is-child notification ">
+         
+         {this.state.breakfast
+          ?<Breackfast/>
+          :" "}
+          {this.state.lunch
+          ? <LunchMenu/>
+          : " "}
     
-  </div>
-  <div className="orderStatus">
-  <p ></p>
+        </article>
+      </div>
+
   </div>
 
-</div>
+
+
+
+
+ 
+
 
   )
 }

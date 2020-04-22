@@ -7,6 +7,7 @@ import ButtonsRol from './components/buttonsRol';
 import Formulario from './components/formulario';
 
 
+
 class App extends Component {
 
   constructor(props) {
@@ -26,13 +27,11 @@ class App extends Component {
   render() {
     return (
 
-      <div className="App">
-        <header className="App-header">
+      <div className="App-header">
             {this.state.isEmptyState && <Formulario addTrip={this.triggerAddTripState} />}
 
             {this.state.isAddTripState && <ButtonsRol />}
-        </header>
-     
+         
        
       </div>
 

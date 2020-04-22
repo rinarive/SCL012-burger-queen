@@ -1,48 +1,46 @@
 import React, { Component } from 'react';
-import db from './confg/firebase';
-import "./centralWhite.css"
+import MenuCards from './menuCards.js'
+import Data from "../data/menu.json";
+//import db from './confg/firebase';
+
 
 class Breackfast extends Component {
-    constructor(props) {
+  constructor() {
+    super() ;
+    this.state = {menu: Data.Breakfast} 
+    console.log()
+  }
+
+    /*constructor(props) {
       super(props);
       this.state = {
         menuA: []
       }
     }
     
-    componentDidMount(){
+    /*componentDidMount(){
       db.collection('MenuDesayuno').get().then((querySnapshot) => {
         const data = querySnapshot.docs.map(doc => doc.data());
         this.setState({
           menuA:data
         })
       
-        console.log("STATE:", this.state);
+        console.log("STATE:", this.state.menuA);
       })
           
-    }
-    render(){
-      return (      
-        <div className="containerButtonsMenu">
-          
-          {this.state.menuA.map((item, key) =>{
-              return (
-              
-                <div  clasName="itemsMenu" key={key}>
-              
-                  <button className="btn btnMenu">
-                    <img alt="foto" src={item.img}></img>
-                    <p>{item.Name}</p><p>{item.Precio}</p>
-                  </button>
-                  
-                </div>
-              
-              ) 
-            })          
-          }      
-        </div>
+    }*/
+    render(){         
+      return (
+          this.state.menu.map((e =>
+          <MenuCards
+          key = {e.id}
+          img = {e.img}
+          name = {e.name}
+          price = {e.price}
+          />)
+          )
       )
-      }
+   }        
     }
   
 export default Breackfast

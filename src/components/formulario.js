@@ -1,4 +1,4 @@
-import React, { Fragment, Component} from "react";
+import React, { Component} from "react";
 import '../assets/css/App.css';
 import Dialog from './dialog'
 
@@ -36,9 +36,6 @@ class Formulario extends Component {
 
         return (
 
-
-            <Fragment className="clientID">    
-
                 <div className="flex-column">
                     <Dialog title="Bienvenido a Burguer Queen" />
                     <form className="row"onSubmit={this.enviarDatos.bind(this)} ref='contactForm' >
@@ -67,7 +64,7 @@ class Formulario extends Component {
                     </form>
                 </div>
 
-            </Fragment>
+         
         )
     }
 }

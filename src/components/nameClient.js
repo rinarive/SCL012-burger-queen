@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bulma/css/bulma.css'
 import '../App.css';
 import './nameClient.css';
 import './plus.png';
@@ -7,71 +8,60 @@ import './plus.png';
 
 
 class NameClient extends Component {
- 
 
-    constructor(props) {
-        super(props);
-        this.state = {
-           form:[]
-        };
-        this.handleInputChanges = this.handleInputChanges.bind(this);
-        this.enviarDatos = this.enviarDatos.bind(this);
+    handleChanges = e => {
+        const client = e.target.value;
+        this.props.inputClient(client);
+    };
+  
+    handleChange = e => {
+        const table = e.target.value;
+        this.props.selectTable(table);
+    };
+    send = e =>{ 
+      
+        this.props.saveOrder()
+
     }
-  handleInputChanges(event) {
-    this.setState({
-        ...this.state,
-        client: event.target.value,
-        mesa: event.target.value
-    });
-}
-   enviarDatos= (event)=>{
-    event.preventDefault()
-
- }
- resetState() {
-    this.setState({
-      form: []
-    });
-  }
+    
+  
     render() {
         return (
-        <div className='clientID'>
-            <div className="titleClient"> 
-
-                <div className='client' onSubmit={this.enviarDatos.bind(this)}ref='contactForm'>
-
-                <p>Clientes:   </p>
-                <input 
-                onChange={this.handleInputChanges}
-                className="form-control"
-                placeholder="Nombre"
-                type='name'
-                name={this.state.name}
-                ref={name => this.inputName = name} 
-            
-                />
-                <p>Mesa:    </p>
-
-                <select
-                onChange={this.handleInputChanges}
-                className="form-control"
-                placeholder="Numero de mesa"
-                type='number'
-                name={this.state.mesa}
-                > 
+  
+        <div className="field has-addons has-addons-right" >
+            <p className="control">
+                <span className="select" >
+                <select onChange={e => this.handleChange(e)}>
+                <option >Mesa </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 </select>
-                <button type="submit"onClick = {this.resetState.bind(this)} className="mesa"><  img src={require("./plus.png")} className='img'/></button>
-
+                </span>
+            </p>
+            <p className="control">
+                <input 
+              className="input"
+              placeholder="Nombre del cliente"
+              onChange={e => this.handleChanges(e)}
+              type="text"
+              name="client"
+              value={this.props.client}/>
+            </p>
+           
+                <button
+                 className="button is-primary" 
+                 type="submit"
+                 onClick={()=>this.send()}
+                 title='Enviar a cocina'>
+                    Iniciar
+                </button>
+           
             </div>
-        </div>
-               
-    </div>
-               
+
+                
         )
     }
 
