@@ -8,7 +8,7 @@ class Formulario extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            form: [],
+            form: '',
             alert: false,
             alertData: {}
         };
@@ -19,7 +19,6 @@ class Formulario extends Component {
   
 
     handleInputChange(event) {
-
         this.setState({
             ...this.state,
             name: event.target.value,
@@ -28,10 +27,13 @@ class Formulario extends Component {
     }
 
     enviarDatos(event) {
+        
+        alert(`welcome, ${this.state.name}`)
+
         event.preventDefault()
       
     }
-  
+
     render() {
 
         return (
@@ -40,6 +42,7 @@ class Formulario extends Component {
 		    alt="logo" 
 			src={logo} 
         />
+<form onSubmit={this.enviarDatos}>
     <div className="field">
         <p className="control has-icons-left has-icons-right">
             <input type="name"
@@ -47,7 +50,6 @@ class Formulario extends Component {
                 className="form-control"
                 id='name' 
                 name={this.state.name}
-                ref={name => this.inputName = name} 
                 onChange={this.handleInputChange}>
             </input>
             <span className="icon is-small is-left">
@@ -80,6 +82,7 @@ class Formulario extends Component {
             >Entrar</button>
         </p>
     </div>
+</form>     
 </>
 
           

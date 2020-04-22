@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bulma/css/bulma.css'
 import '../App.css';
 import './nameClient.css';
-import './plus.png';
+
 
 
 

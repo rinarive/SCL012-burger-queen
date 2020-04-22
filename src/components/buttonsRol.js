@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ButtonGene from './buttonGene';
-import Waiters from './waiters';
+import Waiters from '../secctions/waiters';
 import Dialog from './dialog';
 
 class ButtonsRol extends Component {

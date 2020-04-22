@@ -4,7 +4,7 @@ import '../App.css';
 import LunchMenu from './lunch'
 import Breackfast from './breakfast'
 import NameClient from './nameClient'
-import db from './confg/firebase';
+import db from '../components/confg/firebase';
 
 
 
@@ -118,12 +118,12 @@ render(){
         </article>
 
       </div>
-      <div class="tile is-parent">
+      <div className="tile is-parent">
       <article className="tile is-child notification is-primary">
         <p classname="subtitle">Mesa: {this.selectTable}</p>
         <p className="subtitle">Cliente: {this.inputClient}</p>
         <div className="content">
-        
+     
         </div>
       </article>
     </div>
