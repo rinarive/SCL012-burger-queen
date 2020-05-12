@@ -18,18 +18,9 @@ Para iniciar sesión, el mesero ingresa sus datos de autentificación recibidos.
 #### Flujo 
 ![Mockup Burger Queen](/src/assets/images/Flujo-de-comandas.jpg)
 
-#### Prototipo de alta fidelidad
-Se realizó un prototipo de alta fidelidad usando Figma. Se puede visualizar al link [Prototipo Burger Queen](https://www.figma.com/file/P3RQ4l7JpuSVKRJbeyt7iN/Burguer-Queen)
-#### Mockup
-![Mockup Burger Queen](/src/assets/images/vista-mesero.jpg) 
 
 ## Interfaz de usuario UI
-### Decisiones de diseño
-Para el diseño de la plataforma se elegieron colores cálidos como rojo y naranjo, el background blanco y iconos representativos para los productos del menu, con el fin de realizar una plataforma amigable, alegre y eficiente. 
-#### Colores
-![Colores](/src/assets/images/colors.jpg) 
-#### Tipografía 
-Roboto - es una familia tipográfica sans-serif neo-grotesca desarrollada por Google. <br>
+
 
 La interfaz permite:
 - iniciar sesión con datos predefinidos, 
@@ -48,7 +39,7 @@ En Git también se puede ver el backlog:
 ![Backlog](/src/assets/images/backlog.jpg) 
  ## Autores 
  La plataforma estuvo desarrollada por:
- - [Rina Rivero](https://github.com/rinarive)
+ - [Rena Rivero](https://github.com/rinarive)
  - [Fernanda Ocaranza](https://github.com/fer221)
  - [Mónica Bartha](https://github.com/MonicaBartha)
 
